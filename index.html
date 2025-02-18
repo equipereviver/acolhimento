@@ -160,6 +160,33 @@
             <label for="ultimoUso2">Último uso:</label>
             <input type="text" id="ultimoUso2" class="input-field">
         </div>
+	
+	<div class="section">
+            <label for="substanciaPsico1">Substância Psicoativa 3:</label>
+            <input type="text" id="substanciaPsico3" class="input-field">
+        </div>
+
+        <div class="section">
+            <label>Situação 1:</label>
+            <input type="radio" id="situacao3EmUso" name="situacao1" value="Em uso" class="input-radio"> Em uso
+            <input type="radio" id="situacao3Cessado" name="situacao1" value="Cessado" class="input-radio"> Cessado
+        </div>
+
+        <div class="section">
+            <label for="idadePrimeiroUso1">Idade do 1º uso:</label>
+            <input type="text" id="idadePrimeiroUso3" class="input-field">
+        </div>
+
+        <div class="section">
+            <label for="frequencia3">Frequência:</label>
+            <input type="text" id="frequencia3" class="input-field">
+        </div>
+
+        <div class="section">
+            <label for="ultimoUso3">Último uso:</label>
+            <input type="text" id="ultimoUso3" class="input-field">
+        </div>
+
 
         <div class="section">
             <label>Fissura:</label>
@@ -322,6 +349,12 @@
             resultado += 'Idade do 1º uso 2: ' + document.getElementById('idadePrimeiroUso2').value + '\n';
             resultado += 'Frequência 2: ' + document.getElementById('frequencia2').value + '\n';
             resultado += 'Último uso 2: ' + document.getElementById('ultimoUso2').value + '\n';
+
+            resultado += 'Substância Psicoativa 3: ' + document.getElementById('substanciaPsico3').value + '\n';
+            resultado += 'Situação 3: ' + (document.getElementById('situacao3EmUso').checked ? 'Em uso' : 'Cessado') + '\n';
+            resultado += 'Idade do 1º uso 3: ' + document.getElementById('idadePrimeiroUso3').value + '\n';
+            resultado += 'Frequência 3:' + document.getElementById('frequencia3').value + '\n';
+            resultado += 'Último uso 3: ' + document.getElementById('ultimoUso3').value + '\n';
             
             resultado += 'Fissura: ' + (document.getElementById('fissuraSim').checked ? 'Sim' : 'Não') + '\n';
 
