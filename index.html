@@ -1,8 +1,3 @@
-Claro! Vou adicionar todos esses campos ao formulário e ajustar a parte do resultado para incluir essas informações de maneira organizada e espaçada, como você pediu.
-
-Aqui está o código atualizado com os novos campos:
-
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,248 +7,176 @@ Aqui está o código atualizado com os novos campos:
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        h1 {
+        h1, h2 {
             text-align: center;
         }
-
-        form {
-            display: grid;
-            gap: 10px;
-        }
-
-        input, textarea {
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 100%;
+        .form-container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
             border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-container label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        .form-container input[type="text"], 
+        .form-container textarea, 
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
             border-radius: 5px;
+            border: 1px solid #ccc;
         }
-
-        button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .form-container input[type="radio"], 
+        .form-container input[type="checkbox"] {
+            margin-right: 5px;
         }
-
-        button:hover {
-            background-color: #0056b3;
+        .form-container .section {
+            margin-bottom: 20px;
         }
-
         #resultado {
-            margin-top: 30px;
+            margin-top: 20px;
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f1f1f1;
         }
-
-        #textoCorrido {
-            white-space: pre-line;
-            font-family: monospace;
-            line-height: 1.6;
+        #resultado h2 {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Formulário de Acolhimento</h1>
-        
+
+    <h1>Formulário de Acolhimento</h1>
+
+    <div class="form-container">
         <form id="formulario">
-            <label for="encaminhadoPor">Encaminhado por:</label>
-            <input type="text" id="encaminhadoPor" required>
+            
+            <div class="section">
+                <label for="encaminhadoPor">Encaminhado por:</label>
+                <input type="text" id="encaminhadoPor">
 
-            <label for="motivoAcolhimento">Motivo de acolhimento:</label>
-            <input type="text" id="motivoAcolhimento" required>
+                <label for="motivoAcolhimento">Motivo de acolhimento:</label>
+                <input type="text" id="motivoAcolhimento">
 
-            <label for="equipeReferencia">Equipe de Referência do CS:</label>
-            <input type="text" id="equipeReferencia" required>
+                <label for="equipeReferencia">Equipe de Referência do CS:</label>
+                <input type="text" id="equipeReferencia">
 
-            <label for="profissionaisCaps">Profissionais de Referência no CAPS:</label>
-            <input type="text" id="profissionaisCaps" required>
+                <label for="profissionaisCaps">Profissionais de Referência no CAPS:</label>
+                <input type="text" id="profissionaisCaps">
 
-            <label for="redeApoio">Rede de Apoio:</label>
-            <input type="text" id="redeApoio" required>
+                <label for="redeApoio">Rede de Apoio:</label>
+                <input type="text" id="redeApoio">
 
-            <label for="situacaoProfissional">Situação profissional:</label>
-            <input type="text" id="situacaoProfissional" required>
+                <label for="situacaoProfissional">Situação profissional:</label>
+                <input type="text" id="situacaoProfissional">
 
-            <label for="beneficiario">Beneficiário:</label>
-            <input type="radio" id="sim" name="beneficiario" value="Sim"> Sim
-            <input type="radio" id="nao" name="beneficiario" value="Não"> Não
+                <label>Beneficiário:</label>
+                <input type="radio" id="beneficiario_sim" name="beneficiario" value="Sim"> Sim
+                <input type="radio" id="beneficiario_nao" name="beneficiario" value="Não"> Não
 
-            <label for="historicoVida">Histórico de vida:</label>
-            <textarea id="historicoVida" required></textarea>
+                <label for="historicoVida">Histórico de vida:</label>
+                <textarea id="historicoVida"></textarea>
 
-            <label for="motivacaoTratamento">Motivação para o tratamento:</label>
-            <textarea id="motivacaoTratamento" required></textarea>
+                <label for="motivacaoTratamento">Motivação para o tratamento:</label>
+                <input type="text" id="motivacaoTratamento">
 
-            <label for="alergias">Alergias:</label>
-            <input type="text" id="alergias">
+                <label for="alergias">Alergias:</label>
+                <textarea id="alergias"></textarea>
+            </div>
 
-            <label for="comorbidadesPsiquiatricas">Comorbidades Psiquiátricas:</label>
-            <input type="text" id="comorbidadesPsiquiatricas">
+            <div class="section">
+                <label for="comorbidadesPsiquiatricas">Comorbidades Psiquiátricas:</label>
+                <input type="text" id="comorbidadesPsiquiatricas">
 
-            <label for="medicacoesUso">Medicações em Uso:</label>
-            <input type="text" id="medicacoesUso">
+                <label for="medicacoesUso">Medicações em uso:</label>
+                <input type="text" id="medicacoesUso">
 
-            <label for="historicoTratamentos">Histórico de tratamentos psiquiátricos:</label>
-            <textarea id="historicoTratamentos" required></textarea>
+                <label for="historicoTratamentos">Histórico de tratamentos psiquiátricos:</label>
+                <input type="text" id="historicoTratamentos">
 
-            <label for="comportamentoSuicida">Comportamento Suicida:</label>
-            <input type="text" id="comportamentoSuicida">
+                <label for="comportamentoSuicida">História de Comportamento Suicida:</label>
+                <input type="text" id="comportamentoSuicida">
+            </div>
 
-            <label for="usoSubstancias">USO DE ÁLCOOL E OUTRAS SUBSTÂNCIAS PSICOATIVAS:</label>
+            <div class="section">
+                <label>USO DE ÁLCOOL E OUTRAS SUBSTÂNCIAS PSICOATIVAS:</label>
 
-            <label for="substanciaPsico1">SUBSTÂNCIA PSICOATIVA 1:</label>
-            <input type="text" id="substanciaPsico1">
-            <label for="situacao1">SITUAÇÃO:</label>
-            <input type="radio" id="situacao1_emUso" name="situacao1" value="Em uso"> Em uso
-            <input type="radio" id="situacao1_cessado" name="situacao1" value="Cessado"> Cessado
-            <label for="idadePrimeiroUso1">IDADE DO 1º USO:</label>
-            <input type="number" id="idadePrimeiroUso1">
-            <label for="frequencia1">FREQUÊNCIA:</label>
-            <input type="text" id="frequencia1">
-            <label for="ultimoUso1">ÚLTIMO USO:</label>
-            <input type="text" id="ultimoUso1">
+                <div>
+                    <label for="substanciaPsico1">Substância Psicoativa 1:</label>
+                    <input type="text" id="substanciaPsico1">
+                    <input type="checkbox" id="situacao1_emUso" name="situacao1" value="em uso"> Em uso
+                    <input type="checkbox" id="situacao1_cessado" name="situacao1" value="cessado"> Cessado
+                    <input type="number" id="idadePrimeiroUso1" placeholder="Idade do 1º Uso">
+                    <input type="text" id="frequencia1" placeholder="Frequência">
+                    <input type="text" id="ultimoUso1" placeholder="Último Uso">
+                </div>
 
-            <label for="substanciaPsico2">SUBSTÂNCIA PSICOATIVA 2:</label>
-            <input type="text" id="substanciaPsico2">
-            <label for="situacao2">SITUAÇÃO:</label>
-            <input type="radio" id="situacao2_emUso" name="situacao2" value="Em uso"> Em uso
-            <input type="radio" id="situacao2_cessado" name="situacao2" value="Cessado"> Cessado
-            <label for="idadePrimeiroUso2">IDADE DO 1º USO:</label>
-            <input type="number" id="idadePrimeiroUso2">
-            <label for="frequencia2">FREQUÊNCIA:</label>
-            <input type="text" id="frequencia2">
-            <label for="ultimoUso2">ÚLTIMO USO:</label>
-            <input type="text" id="ultimoUso2">
+                <div>
+                    <label for="substanciaPsico2">Substância Psicoativa 2:</label>
+                    <input type="text" id="substanciaPsico2">
+                    <input type="checkbox" id="situacao2_emUso" name="situacao2" value="em uso"> Em uso
+                    <input type="checkbox" id="situacao2_cessado" name="situacao2" value="cessado"> Cessado
+                    <input type="number" id="idadePrimeiroUso2" placeholder="Idade do 1º Uso">
+                    <input type="text" id="frequencia2" placeholder="Frequência">
+                    <input type="text" id="ultimoUso2" placeholder="Último Uso">
+                </div>
 
-            <label for="substanciaPsico3">SUBSTÂNCIA PSICOATIVA 3:</label>
-            <input type="text" id="substanciaPsico3">
-            <label for="situacao3">SITUAÇÃO:</label>
-            <input type="radio" id="situacao3_emUso" name="situacao3" value="Em uso"> Em uso
-            <input type="radio" id="situacao3_cessado" name="situacao3" value="Cessado"> Cessado
-            <label for="idadePrimeiroUso3">IDADE DO 1º USO:</label>
-            <input type="number" id="idadePrimeiroUso3">
-            <label for="frequencia3">FREQUÊNCIA:</label>
-            <input type="text" id="frequencia3">
-            <label for="ultimoUso3">ÚLTIMO USO:</label>
-            <input type="text" id="ultimoUso3">
+                <div>
+                    <label for="substanciaPsico3">Substância Psicoativa 3:</label>
+                    <input type="text" id="substanciaPsico3">
+                    <input type="checkbox" id="situacao3_emUso" name="situacao3" value="em uso"> Em uso
+                    <input type="checkbox" id="situacao3_cessado" name="situacao3" value="cessado"> Cessado
+                    <input type="number" id="idadePrimeiroUso3" placeholder="Idade do 1º Uso">
+                    <input type="text" id="frequencia3" placeholder="Frequência">
+                    <input type="text" id="ultimoUso3" placeholder="Último Uso">
+                </div>
 
-            <label for="fissura">FISSURA:</label>
-            <input type="radio" id="fissura_sim" name="fissura" value="Sim"> Sim
-            <input type="radio" id="fissura_nao" name="fissura" value="Não"> Não
+                <label for="fissura">Fissura:</label>
+                <input type="radio" id="fissura_sim" name="fissura" value="Sim"> Sim
+                <input type="radio" id="fissura_nao" name="fissura" value="Não"> Não
+            </div>
 
-            <label for="examePsiquico">EXAME PSÍQUICO:</label>
+            <div class="section">
+                <label for="examePsiquico">Exame Psíquico:</label>
 
-            <label for="aparencia">Aparência:</label>
-            <input type="text" id="aparencia">
+                <label for="aparencia">Aparência:</label>
+                <input type="text" id="aparencia">
 
-            <label for="consciencia">Consciência:</label>
-            <input type="radio" id="consciencia_consciente" name="consciencia" value="Consciente"> Consciente
-            <input type="radio" id="consciencia_obnubilado" name="consciencia" value="Obnubilado"> Obnubilado
-            <input type="radio" id="consciencia_torporoso" name="consciencia" value="Torporoso"> Torporoso
-            <input type="radio" id="consciencia_comatoso" name="consciencia" value="Comatoso"> Comatoso
+                <label>Consciência:</label>
+                <input type="radio" id="consciencia_consciente" name="consciencia" value="Consciente"> Consciente
+                <input type="radio" id="consciencia_obnubilado" name="consciencia" value="Obnubilado"> Obnubilado
+                <input type="radio" id="consciencia_torporoso" name="consciencia" value="Torporoso"> Torporoso
+                <input type="radio" id="consciencia_comatoso" name="consciencia" value="Comatoso"> Comatoso
 
-            <label for="atencao">Atenção:</label>
-            <input type="radio" id="atencao_normovigil" name="atencao" value="Normovigil"> Normovigil
-            <input type="radio" id="atencao_hipervigil" name="atencao" value="Hipervigil"> Hipervigil
-            <input type="radio" id="atencao_hipovigil" name="atencao" value="Hipovigil"> Hipovigil
+                <label>Atenção:</label>
+                <input type="radio" id="atencao_normovigil" name="atencao" value="Normovigil"> Normovigil
+                <input type="radio" id="atencao_hipervigil" name="atencao" value="Hipervigil"> Hipervigil
+                <input type="radio" id="atencao_hipovigil" name="atencao" value="Hipovigil"> Hipovigil
 
-            <label for="orientacao">Orientação:</label>
-            Alopsiquicamente:
-            <input type="radio" id="alopsiquicamente_sim" name="orientacao_alopsiquicamente" value="Sim"> Sim
-            <input type="radio" id="alopsiquicamente_nao" name="orientacao_alopsiquicamente" value="Não"> Não
-            Autopsiquicamente:
-            <input type="radio" id="autopsiquicamente_sim" name="orientacao_autopsiquicamente" value="Sim"> Sim
-            <input type="radio" id="autopsiquicamente_nao" name="orientacao_autopsiquicamente" value="Não"> Não
+                <label>Orientação Alopsiquicamente:</label>
+                <input type="radio" id="orientacao_alopsiquicamente_sim" name="orientacao_alopsiquicamente" value="SIM"> Sim
+                <input type="radio" id="orientacao_alopsiquicamente_nao" name="orientacao_alopsiquicamente" value="NÃO"> Não
 
-            <label for="memoria">Memória:</label>
-            <input type="radio" id="memoria_preservada" name="memoria" value="Preservada"> Preservada
-            <input type="radio" id
-
-="memoria_alterada" name="memoria" value="Alterada"> Alterada
-            Tipo de alteração:
-            <input type="text" id="alteracaoMemoria">
-
-            <label for="linguagem">Linguagem:</label>
-            <input type="radio" id="linguagem_normal" name="linguagem" value="Normal"> Normal
-            <input type="radio" id="linguagem_prolixo" name="linguagem" value="Prolixo"> Prolixo
-            <input type="radio" id="linguagem_lacônico" name="linguagem" value="Lacônico"> Lacônico
-            <input type="radio" id="linguagem_logorréico" name="linguagem" value="Logorréico"> Logorréico
-            <input type="radio" id="linguagem_mutismo" name="linguagem" value="Mutismo"> Mutismo
-
-            <label for="afetividade">Afetividade:</label>
-            <input type="radio" id="afetividade_associado" name="afetividade" value="Associado"> Associado
-            <input type="radio" id="afetividade_dissociado" name="afetividade" value="Dissociado"> Dissociado
-            <input type="radio" id="afetividade_embotado" name="afetividade" value="Embotado"> Embotado
-
-            <label for="humor">Humor:</label>
-            <input type="radio" id="humor_eutímico" name="humor" value="Eutímico"> Eutímico
-            <input type="radio" id="humor_hipertímico" name="humor" value="Hipertímico"> Hipertímico
-            <input type="radio" id="humor_hipotímico" name="humor" value="Hipotímico"> Hipotímico
-
-            <label for="vontade">Vontade:</label>
-            <input type="radio" id="vontade_preservada" name="vontade" value="Preservada"> Volição preservada
-            <input type="radio" id="vontade_impulsividade" name="vontade" value="Impulsividade"> Impulsividade
-            <input type="radio" id="vontade_compulsao" name="vontade" value="Compulsão"> Compulsão
-            <input type="radio" id="vontade_diminuida" name="vontade" value="Diminuída"> Volição diminuída
-            <input type="radio" id="vontade_absolvida" name="vontade" value="Absolvida"> Volição abolida
-
-            <label for="psicomotricidade">Psicomotricidade:</label>
-            <input type="radio" id="psicomotricidade_inalterado" name="psicomotricidade" value="Inalterado"> Inalterado
-            <input type="radio" id="psicomotricidade_esturpor" name="psicomotricidade" value="Esturpor"> Esturpor
-            <input type="radio" id="psicomotricidade_agitacao" name="psicomotricidade" value="Agitação"> Agitação psicomotora
-            <input type="radio" id="psicomotricidade_lentificacao" name="psicomotricidade" value="Lentificação"> Lentificação psicomotora
-
-            <label for="pensamento">Pensamento:</label>
-            <input type="radio" id="pensamento_organizado" name="pensamento" value="Organizado"> Organizado
-            <input type="radio" id="pensamento_desorganizado" name="pensamento" value="Desorganizado"> Desorganizado
-            <input type="radio" id="pensamento_inalterado" name="pensamento" value="Inalterado"> Inalterado
-            <input type="radio" id="pensamento_acelerado" name="pensamento" value="Acelerado"> Acelerado
-            <input type="radio" id="pensamento_lentificado" name="pensamento" value="Lentificado"> Lentificado
-            <input type="radio" id="pensamento_normal" name="pensamento" value="Normal"> Normal
-            <input type="radio" id="pensamento_delirante" name="pensamento" value="Delirante"> Delirante
-            <input type="radio" id="pensamento_ideacaoSuicida" name="pensamento" value="Ideação suicida"> Ideação Suicida
-            <input type="radio" id="pensamento_persecutoriedade" name="pensamento" value="Persecutoriedade"> Persecutoriedade
-
-            <label for="tipoDelirio">Tipo de delírio ou persecutoriedade:</label>
-            <input type="text" id="tipoDelirio">
-
-            <label for="sensopercepcao">Senso Percepção:</label>
-            <input type="radio" id="sensopercepcao_semAlteracao" name="sensopercepcao" value="Sem alterações"> Sem alterações
-            <input type="radio" id="sensopercepcao_ilusao" name="sensopercepcao" value="Ilusão"> Ilusão
-            <input type="radio" id="sensopercepcao_despersonalizacao" name="sensopercepcao" value="Despersonalização"> Despersonalização
-
-            <label for="alucinacoes">Alucinações/Tipo:</label>
-            <input type="text" id="alucinacoes">
-
-            <label for="outrasImpressao">Outras impressões do caso:</label>
-            <textarea id="outrasImpressao"></textarea>
-
-            <label for="diagnostico">Diagnóstico - CIAP 2:</label>
-            <input type="text" id="diagnostico">
-
-            <label for="planoInicial">Plano inicial:</label>
-            <input type="radio" id="plano_inserido" name="plano" value="Inserido"> Inserido
-            <input type="radio" id="plano_naoInserido" name="plano" value="Não inserido"> Não inserido
+                <label>Memória:</label>
+                <input type="radio" id="memoria_preservada" name="memoria" value="Preservada"> Preservada
+                <input type="radio" id="memoria_alterada" name="memoria" value="Alterada"> Alterada
+                <input type="text" id="alteracaoMemoria" placeholder="Tipo de alteração">
+            </div>
 
             <button type="submit">Gerar Texto Corrido</button>
         </form>
 
-        <div id="resultado" style="display: none;">
+        <div id="resultado">
             <h2>ACOLHIMENTO</h2>
             <p id="textoCorrido"></p>
         </div>
@@ -262,125 +185,42 @@ Aqui está o código atualizado com os novos campos:
     <script>
         document.getElementById('formulario').addEventListener('submit', function(e) {
             e.preventDefault();
+            let texto = '';
 
-            let encaminhadoPor = document.getElementById('encaminhadoPor').value;
-            let motivoAcolhimento = document.getElementById('motivoAcolhimento').value;
-            let equipeReferencia = document.getElementById('equipeReferencia').value;
-            let profissionaisCaps = document.getElementById('profissionaisCaps').value;
-            let redeApoio = document.getElementById('redeApoio').value;
-            let situacaoProfissional = document.getElementById('situacaoProfissional').value;
-            let beneficiario = document.querySelector('input[name="beneficiario"]:checked').value;
-            let historicoVida = document.getElementById('historicoVida').value;
-            let motivacaoTratamento = document.getElementById('motivacaoTratamento').value;
-            let alergias = document.getElementById('alergias').value;
-            let comorbidadesPsiquiatricas = document.getElementById('comorbidadesPsiquiatricas').value;
-            let medicacoesUso = document.getElementById('medicacoesUso').value;
-            let historicoTratamentos = document.getElementById('historicoTratamentos').value;
-            let comportamentoSuicida = document.getElementById('comportamentoSuicida').value;
+            // Coletando os dados do formulário
+            texto += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
+            texto += 'Motivo de acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
+            texto += 'Equipe de Referência do CS: ' + document.getElementById('equipeReferencia').value + '\n';
+            texto += 'Profissionais de Referência no CAPS: ' + document.getElementById('profissionaisCaps').value + '\n';
+            texto += 'Rede de Apoio: ' + document.getElementById('redeApoio').value + '\n';
+            texto += 'Situação Profissional: ' + document.getElementById('situacaoProfissional').value + '\n';
 
-            let substanciaPsico1 = document.getElementById('substanciaPsico1').value;
-            let situacao1 = document.querySelector('input[name="situacao1"]:checked').value;
-            let idadePrimeiroUso1 = document.getElementById('idadePrimeiroUso1').value;
-            let frequencia1 = document.getElementById('frequencia1').value;
-            let ultimoUso1 = document.getElementById('ultimoUso1').value;
+            // Beneficiário
+            texto += 'Beneficiário: ' + (document.querySelector('input[name="beneficiario"]:checked') ? document.querySelector('input[name="beneficiario"]:checked').value : '') + '\n';
 
-            let substanciaPsico2 = document.getElementById('substanciaPsico2').value;
-            let situacao2 = document.querySelector('input[name="situacao2"]:checked').value;
-            let idadePrimeiroUso2 = document.getElementById('idadePrimeiroUso2').value;
-            let frequencia2 = document.getElementById('frequencia2').value;
-            let ultimoUso2 = document.getElementById('ultimoUso2').value;
+            // Histórico de vida
+            texto += 'Histórico de vida: ' + document.getElementById('historicoVida').value + '\n';
 
-            let substanciaPsico3 = document.getElementById('substanciaPsico3').value;
-            let situacao3 = document.querySelector('input[name="situacao3"]:checked').value;
-            let idadePrimeiroUso3 = document.getElementById('idadePrimeiroUso3').value;
-            let frequencia3 = document.getElementById('frequencia3').value;
-            let ultimoUso3 = document.getElementById('ultimoUso3').value;
+            // Motivação para o tratamento
+            texto += 'Motivação para o tratamento: ' + document.getElementById('motivacaoTratamento').value + '\n';
 
-            let fissura = document.querySelector('input[name="fissura"]:checked').value;
+            // Alergias
+            texto += 'Alergias: ' + document.getElementById('alergias').value + '\n';
 
-            let aparencia = document.getElementById('aparencia').value;
-            let consciencia = document.querySelector('input[name="consciencia"]:checked').value;
-            let atencao = document.querySelector('input[name="atencao"]:checked').value;
-            let orientacaoAlopsiquicamente = document.querySelector('input[name="orientacao_alopsiquicamente"]:checked').value;
-            let orientacaoAutopsiquicamente = document.querySelector('input[name="orientacao_autopsiquicamente"]:checked').value;
-            let memoria = document.querySelector('input[name="memoria"]:checked').value;
-            let tipoAlteracaoMemoria = document.getElementById('alteracaoMemoria').value;
-            let linguagem = document.querySelector('input[name="linguagem"]:checked').value;
-            let afetividade = document.querySelector('input[name="afetividade"]:checked').value;
-            let humor = document.querySelector('input[name="humor"]:checked').value;
-            let vontade = document.querySelector('input[name="vontade"]:checked').value;
-            let psicomotricidade = document.querySelector('input[name="psicomotricidade"]:checked').value;
-            let pensamento = document.querySelector('input[name="pensamento"]:checked').value;
-            let tipoDelirio = document.getElementById('tipoDelirio').value;
-            let sensopercepcao = document.querySelector('input[name="sensopercepcao"]:checked').value;
-            let alucinacoes = document.getElementById('alucinacoes').value;
-            let outrasImpressao = document.getElementById('outrasImpressao').value;
-            let diagnostico = document.getElementById('diagnostico').value;
-            let plano = document.querySelector('input[name="plano"]:checked').value;
+            // Substâncias Psicoativas
+            texto += 'Substância Psicoativa 1: ' + document.getElementById('substanciaPsico1').value + '\n';
+            texto += 'Situação 1: ' + (document.querySelector('input[name="situacao1"]:checked') ? document.querySelector('input[name="situacao1"]:checked').value : '') + '\n';
+            texto += 'Idade do 1º uso 1: ' + document.getElementById('idadePrimeiroUso1').value + '\n';
+            texto += 'Frequência 1: ' + document.getElementById('frequencia1').value + '\n';
+            texto += 'Último uso 1: ' + document.getElementById('ultimoUso1').value + '\n';
 
-            let texto = `
-                Encaminhado por: ${encaminhadoPor}\n
-                Motivo de acolhimento: ${motivoAcolhimento}\n
-                Equipe de Referência do CS: ${equipeReferencia}\n
-                Profissionais de Referência no CAPS: ${profissionaisCaps}\n
-                Rede de Apoio: ${redeApoio}\n
-                Situação profissional: ${situacaoProfissional}\n
-                Beneficiário: ${beneficiario}\n
-                Histórico de vida: ${historicoVida}\n
-                Motivação para o tratamento: ${motivacaoTratamento}\n
-                Alergias: ${alergias}\n
-                Comorbidades Psiquiátricas: ${comorbidadesPsiquiatricas}\n
-                Medicações em uso: ${medicacoesUso}\n
-                Histórico de
-
- tratamentos anteriores: ${historicoTratamentos}\n
-                Comportamento suicida: ${comportamentoSuicida}\n\n
-
-                Substância Psicoativa 1: ${substanciaPsico1}\n
-                Situação 1: ${situacao1}\n
-                Idade do 1º uso: ${idadePrimeiroUso1}\n
-                Frequência: ${frequencia1}\n
-                Último uso: ${ultimoUso1}\n
-
-                Substância Psicoativa 2: ${substanciaPsico2}\n
-                Situação 2: ${situacao2}\n
-                Idade do 1º uso: ${idadePrimeiroUso2}\n
-                Frequência: ${frequencia2}\n
-                Último uso: ${ultimoUso2}\n
-
-                Substância Psicoativa 3: ${substanciaPsico3}\n
-                Situação 3: ${situacao3}\n
-                Idade do 1º uso: ${idadePrimeiroUso3}\n
-                Frequência: ${frequencia3}\n
-                Último uso: ${ultimoUso3}\n
-
-                Fissura: ${fissura}\n\n
-
-                Exame Psíquico: \n
-                Aparência: ${aparencia}\n
-                Consciência: ${consciencia}\n
-                Atenção: ${atencao}\n
-                Orientação Alopsiquicamente: ${orientacaoAlopsiquicamente}\n
-                Orientação Autopsiquicamente: ${orientacaoAutopsiquicamente}\n
-                Memória: ${memoria}\n
-                Tipo de alteração: ${tipoAlteracaoMemoria}\n
-                Linguagem: ${linguagem}\n
-                Afetividade: ${afetividade}\n
-                Humor: ${humor}\n
-                Vontade: ${vontade}\n
-                Psicomotricidade: ${psicomotricidade}\n
-                Pensamento: ${pensamento}\n
-                Tipo de delírio: ${tipoDelirio}\n
-                Senso Percepção: ${sensopercepcao}\n
-                Alucinações/Tipo: ${alucinacoes}\n
-                Outras impressões: ${outrasImpressao}\n
-                Diagnóstico (CIAP 2): ${diagnostico}\n
-                Plano inicial: ${plano}
-            `;
+            // Exame Psíquico
+            texto += 'Exame Psíquico - Aparência: ' + document.getElementById('aparencia').value + '\n';
 
             document.getElementById('resultado').style.display = 'block';
             document.getElementById('textoCorrido').textContent = texto;
         });
     </script>
+
 </body>
 </html>
