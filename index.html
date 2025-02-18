@@ -4,7 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Acolhimento Psiquiátrico</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -63,6 +112,45 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let encaminhadoPor = document.getElementById('encaminhadoPor').value;
+            let motivoAcolhimento = document.getElementById('motivoAcolhimento').value;
+            let equipeReferencia = document.getElementById('equipeReferencia').value;
+            let profissionaisCaps = document.getElementById('profissionaisCaps').value;
+            let redeApoio = document.getElementById('redeApoio').value;
+            let situacaoProfissional = document.getElementById('situacaoProfissional').value;
+            let beneficiario = document.querySelector('input[name="beneficiario"]:checked').value;
+            let historicoVida = document.getElementById('historicoVida').value;
+            let motivacaoTratamento = document.getElementById('motivacaoTratamento').value;
+            let alergias = document.getElementById('alergias').value;
+            let comorbidadesPsiquiatricas = document.getElementById('comorbidadesPsiquiatricas').value;
+            let medicacoesUso = document.getElementById('medicacoesUso').value;
+            let historicoTratamentos = document.getElementById('historicoTratamentos').value;
+            let comportamentoSuicida = document.getElementById('comportamentoSuicida').value;
+
+            let texto = `
+                Encaminhado por: ${encaminhadoPor}
+                Motivo de acolhimento: ${motivoAcolhimento}
+                Equipe de Referência do CS: ${equipeReferencia}
+                Profissionais de Referência no CAPS: ${profissionaisCaps}
+                Rede de Apoio: ${redeApoio}
+                Situação profissional: ${situacaoProfissional}
+                Beneficiário: ${beneficiario}
+                Histórico de vida: ${historicoVida}
+                Motivação para o tratamento: ${motivacaoTratamento}
+                Alergias: ${alergias}
+                Comorbidades Psiquiátricas: ${comorbidadesPsiquiatricas}
+                Medicações em uso: ${medicacoesUso}
+                Histórico de tratamentos psiquiátricos: ${historicoTratamentos}
+                Comportamento suicida: ${comportamentoSuicida}
+            `;
+
+            document.getElementById('textoCorrido').textContent = texto;
+            document.getElementById('resultado').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
