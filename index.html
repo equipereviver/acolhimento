@@ -1,38 +1,68 @@
-document.getElementById('formulario').addEventListener('submit', function(e) {
-    e.preventDefault();
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Acolhimento Psiquiátrico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Acolhimento Psiquiátrico</h1>
+        
+        <form id="formulario">
+            <label for="encaminhadoPor">Encaminhado por:</label>
+            <input type="text" id="encaminhadoPor" required>
 
-    let encaminhadoPor = document.getElementById('encaminhadoPor').value;
-    let motivoAcolhimento = document.getElementById('motivoAcolhimento').value;
-    let equipeReferencia = document.getElementById('equipeReferencia').value;
-    let profissionaisCaps = document.getElementById('profissionaisCaps').value;
-    let redeApoio = document.getElementById('redeApoio').value;
-    let situacaoProfissional = document.getElementById('situacaoProfissional').value;
-    let beneficiario = document.querySelector('input[name="beneficiario"]:checked').value;
-    let historicoVida = document.getElementById('historicoVida').value;
-    let motivacaoTratamento = document.getElementById('motivacaoTratamento').value;
-    let alergias = document.getElementById('alergias').value;
-    let comorbidadesPsiquiatricas = document.getElementById('comorbidadesPsiquiatricas').value;
-    let medicacoesUso = document.getElementById('medicacoesUso').value;
-    let historicoTratamentos = document.getElementById('historicoTratamentos').value;
-    let comportamentoSuicida = document.getElementById('comportamentoSuicida').value;
+            <label for="motivoAcolhimento">Motivo de acolhimento:</label>
+            <input type="text" id="motivoAcolhimento" required>
 
-    let texto = `
-        Encaminhado por: ${encaminhadoPor}
-        Motivo de acolhimento: ${motivoAcolhimento}
-        Equipe de Referência do CS: ${equipeReferencia}
-        Profissionais de Referência no CAPS: ${profissionaisCaps}
-        Rede de Apoio: ${redeApoio}
-        Situação profissional: ${situacaoProfissional}
-        Beneficiário: ${beneficiario}
-        Histórico de vida: ${historicoVida}
-        Motivação para o tratamento: ${motivacaoTratamento}
-        Alergias: ${alergias}
-        Comorbidades Psiquiátricas: ${comorbidadesPsiquiatricas}
-        Medicações em uso: ${medicacoesUso}
-        Histórico de tratamentos psiquiátricos: ${historicoTratamentos}
-        Comportamento suicida: ${comportamentoSuicida}
-    `;
+            <label for="equipeReferencia">Equipe de Referência do CS:</label>
+            <input type="text" id="equipeReferencia" required>
 
-    document.getElementById('textoCorrido').textContent = texto;
-    document.getElementById('resultado').style.display = 'block';
-});
+            <label for="profissionaisCaps">Profissionais de Referência no CAPS:</label>
+            <input type="text" id="profissionaisCaps" required>
+
+            <label for="redeApoio">Rede de Apoio:</label>
+            <input type="text" id="redeApoio" required>
+
+            <label for="situacaoProfissional">Situação profissional:</label>
+            <input type="text" id="situacaoProfissional" required>
+
+            <label for="beneficiario">Beneficiário:</label>
+            <input type="radio" id="sim" name="beneficiario" value="Sim"> Sim
+            <input type="radio" id="nao" name="beneficiario" value="Não"> Não
+
+            <label for="historicoVida">Histórico de vida:</label>
+            <textarea id="historicoVida" required></textarea>
+
+            <label for="motivacaoTratamento">Motivação para o tratamento:</label>
+            <textarea id="motivacaoTratamento" required></textarea>
+
+            <label for="alergias">Alergias:</label>
+            <input type="text" id="alergias">
+
+            <label for="comorbidadesPsiquiatricas">Comorbidades Psiquiátricas:</label>
+            <input type="text" id="comorbidadesPsiquiatricas">
+
+            <label for="medicacoesUso">Medicações em Uso:</label>
+            <input type="text" id="medicacoesUso">
+
+            <label for="historicoTratamentos">Histórico de tratamentos psiquiátricos:</label>
+            <textarea id="historicoTratamentos" required></textarea>
+
+            <label for="comportamentoSuicida">Comportamento Suicida:</label>
+            <input type="text" id="comportamentoSuicida">
+
+            <button type="submit">Gerar Texto Corrido</button>
+        </form>
+
+        <div id="resultado" style="display: none;">
+            <h2>Resultado</h2>
+            <p id="textoCorrido"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
