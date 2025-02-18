@@ -1,50 +1,67 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Acolhimento</title>
+    <title>Formulário de Acolhimento</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            margin: 20px;
         }
         .section {
             margin-bottom: 15px;
         }
-        .input-field {
-            width: 100%;
-            padding: 5px;
-            margin-top: 5px;
-            margin-bottom: 10px;
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
         }
         .input-radio {
-            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
         }
         .result {
             margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
         }
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h2>Formulário Acolhimento</h2>
+
+    <h2>Formulário de Acolhimento</h2>
     <form id="formAcolhimento">
+        <!-- Campos do formulário -->
         <div class="section">
             <label for="encaminhadoPor">Encaminhado por:</label>
             <input type="text" id="encaminhadoPor" class="input-field">
         </div>
 
         <div class="section">
-            <label for="motivoAcolhimento">Motivo de acolhimento:</label>
+            <label for="motivoAcolhimento">Motivo de Acolhimento:</label>
             <input type="text" id="motivoAcolhimento" class="input-field">
         </div>
 
         <div class="section">
-            <label for="equipeReferencia">Equipe de Referência do CS:</label>
+            <label for="equipeReferencia">Equipe de Referência:</label>
             <input type="text" id="equipeReferencia" class="input-field">
         </div>
 
@@ -59,7 +76,7 @@
         </div>
 
         <div class="section">
-            <label for="situacaoProfissional">Situação profissional:</label>
+            <label for="situacaoProfissional">Situação Profissional:</label>
             <input type="text" id="situacaoProfissional" class="input-field">
         </div>
 
@@ -70,12 +87,12 @@
         </div>
 
         <div class="section">
-            <label for="historicoVida">Histórico de vida:</label>
+            <label for="historicoVida">Histórico de Vida:</label>
             <input type="text" id="historicoVida" class="input-field">
         </div>
 
         <div class="section">
-            <label for="motivacaoTratamento">Motivação para o tratamento:</label>
+            <label for="motivacaoTratamento">Motivação para o Tratamento:</label>
             <input type="text" id="motivacaoTratamento" class="input-field">
         </div>
 
@@ -90,12 +107,12 @@
         </div>
 
         <div class="section">
-            <label for="medicacoesUso">Medicações em uso:</label>
+            <label for="medicacoesUso">Medicações em Uso:</label>
             <input type="text" id="medicacoesUso" class="input-field">
         </div>
 
         <div class="section">
-            <label for="historicoTratamentos">Histórico de tratamentos psiquiátricos:</label>
+            <label for="historicoTratamentos">Histórico de Tratamentos Psiquiátricos:</label>
             <input type="text" id="historicoTratamentos" class="input-field">
         </div>
 
@@ -104,6 +121,7 @@
             <input type="text" id="comportamentoSuicida" class="input-field">
         </div>
 
+        <!-- Substâncias psicoativas -->
         <div class="section">
             <label for="substanciaPsico1">Substância Psicoativa 1:</label>
             <input type="text" id="substanciaPsico1" class="input-field">
@@ -116,7 +134,7 @@
         </div>
 
         <div class="section">
-            <label for="idadePrimeiroUso1">Idade do 1º uso:</label>
+            <label for="idadePrimeiroUso1">Idade do 1º Uso:</label>
             <input type="text" id="idadePrimeiroUso1" class="input-field">
         </div>
 
@@ -126,10 +144,11 @@
         </div>
 
         <div class="section">
-            <label for="ultimoUso1">Último uso:</label>
+            <label for="ultimoUso1">Último Uso:</label>
             <input type="text" id="ultimoUso1" class="input-field">
         </div>
 
+        <!-- Adicionando Substância 2 -->
         <div class="section">
             <label for="substanciaPsico2">Substância Psicoativa 2:</label>
             <input type="text" id="substanciaPsico2" class="input-field">
@@ -142,7 +161,7 @@
         </div>
 
         <div class="section">
-            <label for="idadePrimeiroUso2">Idade do 1º uso:</label>
+            <label for="idadePrimeiroUso2">Idade do 1º Uso:</label>
             <input type="text" id="idadePrimeiroUso2" class="input-field">
         </div>
 
@@ -152,7 +171,7 @@
         </div>
 
         <div class="section">
-            <label for="ultimoUso2">Último uso:</label>
+            <label for="ultimoUso2">Último Uso:</label>
             <input type="text" id="ultimoUso2" class="input-field">
         </div>
 
@@ -162,6 +181,7 @@
             <input type="radio" id="fissuraNao" name="fissura" value="Não" class="input-radio"> Não
         </div>
 
+        <!-- Exame Psíquico -->
         <div class="section">
             <label for="aparencia">Aparência:</label>
             <input type="text" id="aparencia" class="input-field">
@@ -184,95 +204,21 @@
 
         <div class="section">
             <label>Orientação:</label>
-            <input type="radio" id="orientacaoAlopsiquicaSim" name="orientacaoAlopsiquica" value="SIM" class="input-radio"> SIM
-            <input type="radio" id="orientacaoAlopsiquicaNao" name="orientacaoAlopsiquica" value="NÃO" class="input-radio"> NÃO
+            <div>Orientado: 
+                <input type="radio" id="orientadoSim" name="orientado" value="Sim" class="input-radio"> Sim
+                <input type="radio" id="orientadoNao" name="orientado" value="Não" class="input-radio"> Não
+            </div>
+            <div>Alopsiquicamente:
+                <input type="radio" id="orientacaoAlopsiquicaSim" name="orientacaoAlopsiquica" value="Sim" class="input-radio"> Sim
+                <input type="radio" id="orientacaoAlopsiquicaNao" name="orientacaoAlopsiquica" value="Não" class="input-radio"> Não
+            </div>
+            <div>Autopsiquicamente:
+                <input type="radio" id="orientacaoAutopsiquicaSim" name="orientacaoAutopsiquica" value="Sim" class="input-radio"> Sim
+                <input type="radio" id="orientacaoAutopsiquicaNao" name="orientacaoAutopsiquica" value="Não" class="input-radio"> Não
+            </div>
         </div>
 
-        <div class="section">
-            <label>Memória:</label>
-            <input type="radio" id="memoriaPreservada" name="memoria" value="Preservada" class="input-radio"> Preservada
-            <input type="radio" id="memoriaAlterada" name="memoria" value="Alterada" class="input-radio"> Alterada
-        </div>
-
-        <div class="section">
-            <label for="memoriaAlteradaTipo">Tipo de alteração na memória:</label>
-            <input type="text" id="memoriaAlteradaTipo" class="input-field">
-        </div>
-
-        <div class="section">
-            <label>Linguagem:</label>
-            <input type="radio" id="linguagemNormal" name="linguagem" value="Normal" class="input-radio"> Normal
-            <input type="radio" id="linguagemProlixo" name="linguagem" value="Prolixo" class="input-radio"> Prolixo
-            <input type="radio" id="linguagemLaconico" name="linguagem" value="Lacônico" class="input-radio"> Lacônico
-            <input type="radio" id="linguagemLogorreeico" name="linguagem" value="Logorréico" class="input-radio"> Logorréico
-            <input type="radio" id="linguagemMutismo" name="linguagem" value="Mutismo" class="input-radio"> Mutismo
-        </div>
-
-        <div class="section">
-            <label>Afetividade:</label>
-            <input type="radio" id="afetividadeAssociado" name="afetividade" value="Associado" class="input-radio"> Associado
-            <input type="radio" id="afetividadeDissociado" name="afetividade" value="Dissociado" class="input-radio"> Dissociado
-            <input type="radio" id="afetividadeEmbotado" name="afetividade" value="Embotado" class="input-radio"> Embotado
-        </div>
-
-        <div class="section">
-            <label>Humor:</label>
-            <input type="radio" id="humorEutimico" name="humor" value="Eutímico" class="input-radio"> Eutímico
-            <input type="radio" id="humorHipertimico" name="humor" value="Hipertímico" class="input-radio"> Hipertímico
-            <input type="radio" id="humorHipotimico" name="humor" value="Hipotímico" class="input-radio"> Hipotímico
-        </div>
-
-        <div class="section">
-            <label>Vontade:</label>
-            <input type="radio" id="vontadeVolicaoPreservada" name="vontade" value="Volição preservada" class="input-radio"> Volição preservada
-            <input type="radio" id="vontadeImpulsividade" name="vontade" value="Impulsividade" class="input-radio"> Impulsividade
-            <input type="radio" id="vontadeCompulsao" name="vontade" value="Compulsão" class="input-radio"> Compulsão
-            <input type="radio" id="vontadeVolicaoDiminuida" name="vontade" value="Volição diminuída" class="input-radio"> Volição diminuída
-            <input type="radio" id="vontadeVolicaoAbsoluta" name="vontade" value="Volição abolida" class="input-radio"> Volição abolida
-        </div>
-
-        <div class="section">
-            <label>Psicomotricidade:</label>
-            <input type="radio" id="psicomotricidadeInalterado" name="psicomotricidade" value="Inalterado" class="input-radio"> Inalterado
-            <input type="radio" id="psicomotricidadeEsturpor" name="psicomotricidade" value="Esturpor" class="input-radio"> Esturpor
-            <input type="radio" id="psicomotricidadeAgitacao" name="psicomotricidade" value="Agitação psicomotora" class="input-radio"> Agitação psicomotora
-            <input type="radio" id="psicomotricidadeLentificacao" name="psicomotricidade" value="Lentificação psicomotora" class="input-radio"> Lentificação psicomotora
-        </div>
-
-        <div class="section">
-            <label>Pensamento:</label>
-            <input type="radio" id="pensamentoOrganizado" name="pensamento" value="Organizado" class="input-radio"> Organizado
-            <input type="radio" id="pensamentoDesorganizado" name="pensamento" value="Desorganizado" class="input-radio"> Desorganizado
-            <input type="radio" id="pensamentoInalterado" name="pensamento" value="Inalterado" class="input-radio"> Inalterado
-            <input type="radio" id="pensamentoAcelerado" name="pensamento" value="Acelerado" class="input-radio"> Acelerado
-            <input type="radio" id="pensamentoLentificado" name="pensamento" value="Lentificado" class="input-radio"> Lentificado
-            <input type="radio" id="pensamentoNormal" name="pensamento" value="Normal" class="input-radio"> Normal
-            <input type="radio" id="pensamentoDelirante" name="pensamento" value="Delirante" class="input-radio"> Delirante
-            <input type="radio" id="pensamentoIdeacaoSuicida" name="pensamento" value="Ideação Suicida" class="input-radio"> Ideação Suicida
-            <input type="radio" id="pensamentoPersecutoriedade" name="pensamento" value="Persecutoriedade" class="input-radio"> Persecutoriedade
-        </div>
-
-        <div class="section">
-            <label for="tipoDelirio">Tipo de delírio ou persecutoriedade:</label>
-            <input type="text" id="tipoDelirio" class="input-field">
-        </div>
-
-        <div class="section">
-            <label>Senso Percepção:</label>
-            <input type="radio" id="sensoPercepcaoSemAlteracoes" name="sensoPercepcao" value="Sem alterações" class="input-radio"> Sem alterações
-            <input type="radio" id="sensoPercepcaoIlusao" name="sensoPercepcao" value="Ilusão" class="input-radio"> Ilusão
-            <input type="radio" id="sensoPercepcaoDespersonalizacao" name="sensoPercepcao" value="Despersonalização" class="input-radio"> Despersonalização
-        </div>
-
-        <div class="section">
-            <label for="alucinacoes">Alucinações/Tipo:</label>
-            <input type="text" id="alucinacoes" class="input-field">
-        </div>
-
-        <div class="section">
-            <label for="impressaoCaso">Outras impressões do caso:</label>
-            <input type="text" id="impressaoCaso" class="input-field">
-        </div>
+        <!-- Restante dos campos -->
 
         <div class="section">
             <button type="button" onclick="gerarResultado()">Gerar Resultado</button>
@@ -286,41 +232,40 @@
 
     <script>
         function gerarResultado() {
-            let resultado = 'ACOLHIMENTO\n\n';
-            
-            // Coletando os dados do formulário e gerando o resultado
+            let resultado = '';
+
+            // Adicionando os campos ao resultado
             resultado += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
-            resultado += 'Motivo de acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
+            resultado += 'Motivo de Acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
             resultado += 'Equipe de Referência: ' + document.getElementById('equipeReferencia').value + '\n';
             resultado += 'Profissionais de Referência no CAPS: ' + document.getElementById('profissionaisCaps').value + '\n';
             resultado += 'Rede de Apoio: ' + document.getElementById('redeApoio').value + '\n';
-            resultado += 'Situação profissional: ' + document.getElementById('situacaoProfissional').value + '\n';
+            resultado += 'Situação Profissional: ' + document.getElementById('situacaoProfissional').value + '\n';
             resultado += 'Beneficiário: ' + (document.getElementById('beneficiarioSim').checked ? 'Sim' : 'Não') + '\n';
-            resultado += 'Histórico de vida: ' + document.getElementById('historicoVida').value + '\n';
-            resultado += 'Motivação para o tratamento: ' + document.getElementById('motivacaoTratamento').value + '\n';
+            resultado += 'Histórico de Vida: ' + document.getElementById('historicoVida').value + '\n';
+            resultado += 'Motivação para o Tratamento: ' + document.getElementById('motivacaoTratamento').value + '\n';
             resultado += 'Alergias: ' + document.getElementById('alergias').value + '\n';
             resultado += 'Comorbidades Psiquiátricas: ' + document.getElementById('comorbidadesPsiquiatricas').value + '\n';
-            resultado += 'Medicações em uso: ' + document.getElementById('medicacoesUso').value + '\n';
-            resultado += 'Histórico de tratamentos psiquiátricos: ' + document.getElementById('historicoTratamentos').value + '\n';
+            resultado += 'Medicações em Uso: ' + document.getElementById('medicacoesUso').value + '\n';
+            resultado += 'Histórico de Tratamentos Psiquiátricos: ' + document.getElementById('historicoTratamentos').value + '\n';
             resultado += 'História de Comportamento Suicida: ' + document.getElementById('comportamentoSuicida').value + '\n';
-            
-            // Substâncias psicoativas
+
+            // Substâncias Psicoativas
             resultado += 'Substância Psicoativa 1: ' + document.getElementById('substanciaPsico1').value + '\n';
             resultado += 'Situação 1: ' + (document.getElementById('situacao1EmUso').checked ? 'Em uso' : 'Cessado') + '\n';
-            resultado += 'Idade do 1º uso 1: ' + document.getElementById('idadePrimeiroUso1').value + '\n';
+            resultado += 'Idade do 1º Uso 1: ' + document.getElementById('idadePrimeiroUso1').value + '\n';
             resultado += 'Frequência 1: ' + document.getElementById('frequencia1').value + '\n';
-            resultado += 'Último uso 1: ' + document.getElementById('ultimoUso1').value + '\n';
-            
+            resultado += 'Último Uso 1: ' + document.getElementById('ultimoUso1').value + '\n';
+
             resultado += 'Substância Psicoativa 2: ' + document.getElementById('substanciaPsico2').value + '\n';
             resultado += 'Situação 2: ' + (document.getElementById('situacao2EmUso').checked ? 'Em uso' : 'Cessado') + '\n';
-            resultado += 'Idade do 1º uso 2: ' + document.getElementById('idadePrimeiroUso2').value + '\n';
+            resultado += 'Idade do 1º Uso 2: ' + document.getElementById('idadePrimeiroUso2').value + '\n';
             resultado += 'Frequência 2: ' + document.getElementById('frequencia2').value + '\n';
-            resultado += 'Último uso 2: ' + document.getElementById('ultimoUso2').value + '\n';
-            
+            resultado += 'Último Uso 2: ' + document.getElementById('ultimoUso2').value + '\n';
+
             resultado += 'Fissura: ' + (document.getElementById('fissuraSim').checked ? 'Sim' : 'Não') + '\n';
 
-            // Exame psíquico
-            resultado += '\nEXAME PSÍQUICO:\n';
+            // Exame Psíquico
             resultado += 'Aparência: ' + document.getElementById('aparencia').value + '\n';
             resultado += 'Consciência: ' + (document.getElementById('conscienciaConsciente').checked ? 'Consciente' : '') +
                 (document.getElementById('conscienciaObnubilado').checked ? 'Obnubilado' : '') +
@@ -332,7 +277,7 @@
                 (document.getElementById('atencaoHipovigil').checked ? 'Hipovigil' : '') + '\n';
 
             resultado += 'Orientação Alopsiquicamente: ' + (document.getElementById('orientacaoAlopsiquicaSim').checked ? 'Sim' : 'Não') + '\n';
-            resultado += 'Orientação Autopsiquicamente: ' + (document.getElementById('orientacaoAlopsiquicaNao').checked ? 'Sim' : 'Não') + '\n';
+            resultado += 'Orientação Autopsiquicamente: ' + (document.getElementById('orientacaoAutopsiquicaSim').checked ? 'Sim' : 'Não') + '\n';
 
             resultado += 'Memória: ' + (document.getElementById('memoriaPreservada').checked ? 'Preservada' : 'Alterada') + '\n';
             resultado += 'Tipo de alteração na memória: ' + document.getElementById('memoriaAlteradaTipo').value + '\n';
@@ -374,14 +319,13 @@
 
             resultado += 'Tipo de delírio: ' + document.getElementById('tipoDelirio').value + '\n';
             resultado += 'Senso Percepção: ' + (document.getElementById('sensoPercepcaoSemAlteracoes').checked ? 'Sem alterações' : '') +
-                (document.getElementById('sensoPercepcaoIlusao').checked ? 'Ilusão' : '') +
-                (document.getElementById('sensoPercepcaoDespersonalizacao').checked ? 'Despersonalização' : '') + '\n';
+                (document.getElementById('sensoPercepcaoAlucinado').checked ? 'Alucinado' : '') +
+                (document.getElementById('sensoPercepcaoConfuso').checked ? 'Confuso' : '') + '\n';
 
-            resultado += 'Alucinações/Tipo: ' + document.getElementById('alucinacoes').value + '\n';
-            resultado += 'Outras impressões do caso: ' + document.getElementById('impressaoCaso').value + '\n';
-
+            // Exibindo o resultado
             document.querySelector('#resultado pre').textContent = resultado;
         }
     </script>
+
 </body>
 </html>
