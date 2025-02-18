@@ -23,7 +23,7 @@
         }
 
         pre {
-            white-space: pre-wrap; 
+            white-space: pre-wrap;
             word-wrap: break-word;
         }
 
@@ -91,7 +91,6 @@
             <input type="text" id="comportamentoSuicida" class="input-field">
         </div>
 
-        <!-- Campos para substâncias psicoativas -->
         <div class="section">
             <label for="substanciaPsico1">Substância Psicoativa 1:</label>
             <input type="text" id="substanciaPsico1" class="input-field">
@@ -110,7 +109,6 @@
             <input type="text" id="ultimoUso1" class="input-field">
         </div>
 
-        <!-- Repetir para as outras substâncias -->
         <div class="section">
             <label for="substanciaPsico2">Substância Psicoativa 2:</label>
             <input type="text" id="substanciaPsico2" class="input-field">
@@ -143,50 +141,225 @@
             <label>Consciência:</label>
             <input type="radio" id="conscienciaConsciente" name="consciencia" value="Consciente" class="input-radio"> Consciente
             <input type="radio" id="conscienciaObnubilado" name="consciencia" value="Obnubilado" class="input-radio"> Obnubilado
+            <input type="radio" id="conscienciaTorporoso" name="consciencia" value="Torporoso" class="input-radio"> Torporoso
+            <input type="radio" id="conscienciaComatoso" name="consciencia" value="Comatoso" class="input-radio"> Comatoso
+        </div>
 
+        <div class="section">
             <label>Atenção:</label>
             <input type="radio" id="atencaoNormovigil" name="atencao" value="Normovigil" class="input-radio"> Normovigil
             <input type="radio" id="atencaoHipervigil" name="atencao" value="Hipervigil" class="input-radio"> Hipervigil
+            <input type="radio" id="atencaoHipovigil" name="atencao" value="Hipovigil" class="input-radio"> Hipovigil
         </div>
 
-        <!-- Linguagem, Afetividade, Humor, etc -->
+        <div class="section">
+            <label>Orientação:</label>
+            Alopsiquicamente:
+            <input type="radio" id="alopsiquicamenteSim" name="alopsiquicamente" value="Sim" class="input-radio"> Sim
+            <input type="radio" id="alopsiquicamenteNao" name="alopsiquicamente" value="Não" class="input-radio"> Não
+            Autopsiquicamente:
+            <input type="radio" id="autopsiquicamenteSim" name="autopsiquicamente" value="Sim" class="input-radio"> Sim
+            <input type="radio" id="autopsiquicamenteNao" name="autopsiquicamente" value="Não" class="input-radio"> Não
+        </div>
+
+        <div class="section">
+            <label for="memoria">Memória:</label>
+            <input type="radio" id="memoriaPreservada" name="memoria" value="Preservada" class="input-radio"> Preservada
+            <input type="radio" id="memoriaAlterada" name="memoria" value="Alterada" class="input-radio"> Alterada
+            Tipo de alteração: <input type="text" id="tipoAlteracao" class="input-field">
+        </div>
+
         <div class="section">
             <label>Linguagem:</label>
             <input type="radio" id="linguagemNormal" name="linguagem" value="Normal" class="input-radio"> Normal
             <input type="radio" id="linguagemProlixo" name="linguagem" value="Prolixo" class="input-radio"> Prolixo
+            <input type="radio" id="linguagemLaconico" name="linguagem" value="Lacônico" class="input-radio"> Lacônico
+            <input type="radio" id="linguagemLogorreeico" name="linguagem" value="Logorréico" class="input-radio"> Logorréico
+            <input type="radio" id="linguagemMutismo" name="linguagem" value="Mutismo" class="input-radio"> Mutismo
         </div>
 
         <div class="section">
-            <button type="button" id="submitBtn">Gerar Acolhimento</button>
+            <label>Afetividade:</label>
+            <input type="radio" id="afetividadeAssociado" name="afetividade" value="Associado" class="input-radio"> Associado
+            <input type="radio" id="afetividadeDissociado" name="afetividade" value="Dissociado" class="input-radio"> Dissociado
+            <input type="radio" id="afetividadeEmbotado" name="afetividade" value="Embotado" class="input-radio"> Embotado
         </div>
+
+        <div class="section">
+            <label>Humor:</label>
+            <input type="radio" id="humorEutimico" name="humor" value="Eutímico" class="input-radio"> Eutímico
+            <input type="radio" id="humorHipertimico" name="humor" value="Hipertímico" class="input-radio"> Hipertímico
+            <input type="radio" id="humorHipotimico" name="humor" value="Hipotímico" class="input-radio"> Hipotímico
+        </div>
+
+        <div class="section">
+            <label for="vontade">Vontade:</label>
+            <input type="radio" id="vontadeVolicaoPreservada" name="vontade" value="Volição preservada" class="input-radio"> Volição preservada
+            <input type="radio" id="vontadeImpulsividade" name="vontade" value="Impulsividade" class="input-radio"> Impulsividade
+            <input type="radio" id="vontadeCompulsao" name="vontade" value="Compulsão" class="input-radio"> Compulsão
+            <input type="radio" id="vontadeVolicaoDiminuida" name="vontade" value="Volição diminuída" class="input-radio"> Volição diminuída
+            <input type="radio" id="vontadeVolicaoAbsoluta" name="vontade" value="Volição abolida" class="input-radio"> Volição abolida
+        </div>
+
+        <div class="section">
+            <label for="psicomotricidade">Psicomotricidade:</label>
+            <input type="radio" id="psicomotricidadeInalterado" name="psicomotricidade" value="Inalterado" class="input-radio"> Inalterado
+            <input type="radio" id="psicomotricidadeEsturpor" name="psicomotricidade" value="Esturpor" class="input-radio"> Esturpor
+            <input type="radio" id="psicomotricidadeAgitacao" name="psicomotricidade" value="Agitação psicomotora" class="input-radio"> Agitação psicomotora
+            <input type="radio" id="psicomotricidadeLentificacao" name="psicomotricidade" value="Lentificação psicomotora" class="input-radio"> Lentificação psicomotora
+        </div>
+
+        <div class="section">
+            <label>Pensamento:</label>
+            <input type="radio" id="pensamentoOrganizado" name="pensamento" value="Organizado" class="input-radio"> Organizado
+            <input type="radio" id="pensamentoDesorganizado" name="pensamento" value="Desorganizado" class="input-radio"> Desorganizado
+            <input type="radio" id="pensamentoInalterado" name="pensamento" value="Inalterado" class="input-radio"> Inalterado
+            <input type="radio" id="pensamentoAcelerado" name="pensamento" value="Acelerado" class="input-radio"> Acelerado
+            <input type="radio" id="pensamentoLentificado" name="pensamento" value="Lentificado" class="input-radio"> Lentificado
+            <input type="radio" id="pensamentoNormal" name="pensamento" value="Normal" class="input-radio"> Normal
+            <input type="radio" id="pensamentoDelirante" name="pensamento" value="Delirante" class="input-radio"> Delirante
+            <input type="radio" id="pensamentoIdeacaoSuicida" name="pensamento" value="Ideação Suicida" class="input-radio"> Ideação Suicida
+            <input type="radio" id="pensamentoPersecutoriedade" name="pensamento" value="Persecutoriedade" class="input-radio"> Persecutoriedade
+        </div>
+
+        <div class="section">
+            <label for="tipoDelirio">Tipo de delírio ou persecutoriedade:</label>
+            <input type="text" id="tipoDelirio" class="input-field">
+        </div>
+
+        <div class="section">
+            <label>Senso Percepção:</label>
+            <input type="radio" id="sensoPercepcaoSemAlteracoes" name="sensoPercepcao" value="Sem alterações" class="input-radio"> Sem alterações
+            <input type="radio" id="sensoPercepcaoIlusao" name="sensoPercepcao" value="Ilusão" class="input-radio"> Ilusão
+            <input type="radio" id="sensoPercepcaoDespersonalizacao" name="sensoPercepcao" value="Despersonalização" class="input-radio"> Despersonalização
+        </div>
+
+        <div class="section">
+            <label for="alucinacoes">Alucinações/Tipo:</label>
+            <input type="text" id="alucinacoes" class="input-field">
+        </div>
+
+        <div class="section">
+            <label for="impressaoCaso">Outras impressões do caso:</label>
+            <textarea id="impressaoCaso" class="input-field"></textarea>
+        </div>
+
+        <div class="section">
+            <label for="diagnostico">Diagnóstico:</label>
+            <input type="text" id="diagnostico" class="input-field">
+        </div>
+
+        <div class="section">
+            <label for="ciap2">CIAP 2:</label>
+            <input type="text" id="ciap2" class="input-field">
+        </div>
+
+        <div class="section">
+            <label for="planoInicial">Plano inicial:</label>
+            <input type="text" id="planoInicial" class="input-field">
+        </div>
+
+        <div class="section">
+            <label>Inserido:</label>
+            <input type="radio" id="inseridoSim" name="inserido" value="Sim" class="input-radio"> Sim
+            <input type="radio" id="inseridoNao" name="inserido" value="Não" class="input-radio"> Não
+        </div>
+
+        <button type="button" onclick="gerarResultado()">Gerar Resultado</button>
     </form>
 
-    <!-- Resultado -->
     <div class="result">
         <h2>ACOLHIMENTO</h2>
-        <pre id="textoCorrido"></pre>
+        <pre id="resultado"></pre>
     </div>
 
     <script>
-        document.getElementById('submitBtn').addEventListener('click', function() {
-            let texto = '';
+        function gerarResultado() {
+            let resultado = '';
+            
+            resultado += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
+            resultado += 'Motivo de acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
+            resultado += 'Equipe de Referência do CS: ' + document.getElementById('equipeReferencia').value + '\n';
+            resultado += 'Profissionais de Referência no CAPS: ' + document.getElementById('profissionaisCaps').value + '\n';
+            resultado += 'Rede de Apoio: ' + document.getElementById('redeApoio').value + '\n';
+            resultado += 'Situação profissional: ' + document.getElementById('situacaoProfissional').value + '\n';
+            resultado += 'Beneficiário: ' + (document.getElementById('beneficiarioSim').checked ? 'Sim' : 'Não') + '\n';
+            resultado += 'Histórico de vida: ' + document.getElementById('historicoVida').value + '\n';
+            resultado += 'Motivação para o tratamento: ' + document.getElementById('motivacaoTratamento').value + '\n';
+            resultado += 'Alergias: ' + document.getElementById('alergias').value + '\n';
 
-            // Coletando as informações dos campos
-            texto += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
-            texto += 'Motivo de acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
-            texto += 'Equipe de Referência do CS: ' + document.getElementById('equipeReferencia').value + '\n';
-            texto += 'Profissionais de Referência no CAPS: ' + document.getElementById('profissionaisCaps').value + '\n';
-            texto += 'Rede de Apoio: ' + document.getElementById('redeApoio').value + '\n';
-            texto += 'Situação profissional: ' + document.getElementById('situacaoProfissional').value + '\n';
-            texto += 'Beneficiário: ' + (document.querySelector('input[name="beneficiario"]:checked') ? document.querySelector('input[name="beneficiario"]:checked').value : '') + '\n';
-            texto += 'Histórico de vida: ' + document.getElementById('historicoVida').value + '\n';
-            texto += 'Motivação para o tratamento: ' + document.getElementById('motivacaoTratamento').value + '\n';
-            texto += 'Alergias: ' + document.getElementById('alergias').value + '\n';
+            // Comorbidades e outros campos do formulário
+            resultado += 'Comorbidades Psiquiátricas: ' + document.getElementById('comorbidadesPsiquiatricas').value + '\n';
+            resultado += 'Medicações em uso: ' + document.getElementById('medicacoesUso').value + '\n';
+            resultado += 'Histórico de tratamentos psiquiátricos: ' + document.getElementById('historicoTratamentos').value + '\n';
+            resultado += 'História de Comportamento Suicida: ' + document.getElementById('comportamentoSuicida').value + '\n';
+            
+            // Campos de substâncias psicoativas
+            resultado += 'Substância Psicoativa 1: ' + document.getElementById('substanciaPsico1').value + '\n';
+            resultado += 'Situação 1: ' + (document.getElementById('situacao1EmUso').checked ? 'Em uso' : 'Cessado') + '\n';
+            resultado += 'Idade do 1º uso: ' + document.getElementById('idadePrimeiroUso1').value + '\n';
+            resultado += 'Frequência: ' + document.getElementById('frequencia1').value + '\n';
+            resultado += 'Último uso: ' + document.getElementById('ultimoUso1').value + '\n';
+            
+            resultado += 'Substância Psicoativa 2: ' + document.getElementById('substanciaPsico2').value + '\n';
+            resultado += 'Situação 2: ' + (document.getElementById('situacao2EmUso').checked ? 'Em uso' : 'Cessado') + '\n';
+            resultado += 'Idade do 1º uso: ' + document.getElementById('idadePrimeiroUso2').value + '\n';
+            resultado += 'Frequência: ' + document.getElementById('frequencia2').value + '\n';
+            resultado += 'Último uso: ' + document.getElementById('ultimoUso2').value + '\n';
+            
+            resultado += 'Fissura: ' + (document.getElementById('fissuraSim').checked ? 'Sim' : 'Não') + '\n';
 
-            // Exibindo o texto final
-            document.getElementById('textoCorrido').textContent = texto;
-        });
+            // Exame Psíquico
+            resultado += 'Aparência: ' + document.getElementById('aparencia').value + '\n';
+            resultado += 'Consciência: ' + (document.getElementById('conscienciaConsciente').checked ? 'Consciente' : '') +
+                        (document.getElementById('conscienciaObnubilado').checked ? 'Obnubilado' : '') +
+                        (document.getElementById('conscienciaTorporoso').checked ? 'Torporoso' : '') +
+                        (document.getElementById('conscienciaComatoso').checked ? 'Comatoso' : '') + '\n';
+            resultado += 'Atenção: ' + (document.getElementById('atencaoNormovigil').checked ? 'Normovigil' : '') +
+                        (document.getElementById('atencaoHipervigil').checked ? 'Hipervigil' : '') +
+                        (document.getElementById('atencaoHipovigil').checked ? 'Hipovigil' : '') + '\n';
+            resultado += 'Orientação: ' + (document.getElementById('orientacaoAlopsiquicaSim').checked ? 'Alopsiquicamente: SIM' : 'Alopsiquicamente: NÃO') + '\n';
+            resultado += 'Autopsiquicamente: ' + (document.getElementById('orientacaoAutopsiquicaSim').checked ? 'SIM' : 'NÃO') + '\n';
+            resultado += 'Memória: ' + (document.getElementById('memoriaPreservada').checked ? 'Preservada' : 'Alterada') + '\n';
+            resultado += 'Tipo de alteração na memória: ' + document.getElementById('memoriaAlteradaTipo').value + '\n';
+            resultado += 'Linguagem: ' + (document.getElementById('linguagemNormal').checked ? 'Normal' : '') +
+                        (document.getElementById('linguagemProlixo').checked ? 'Prolixo' : '') +
+                        (document.getElementById('linguagemLaconico').checked ? 'Lacônico' : '') +
+                        (document.getElementById('linguagemLogorreeico').checked ? 'Logorréico' : '') +
+                        (document.getElementById('linguagemMutismo').checked ? 'Mutismo' : '') + '\n';
+            resultado += 'Afetividade: ' + (document.getElementById('afetividadeAssociado').checked ? 'Associado' : '') +
+                        (document.getElementById('afetividadeDissociado').checked ? 'Dissociado' : '') +
+                        (document.getElementById('afetividadeEmbotado').checked ? 'Embotado' : '') + '\n';
+            resultado += 'Humor: ' + (document.getElementById('humorEutimico').checked ? 'Eutímico' : '') +
+                        (document.getElementById('humorHipertimico').checked ? 'Hipertímico' : '') +
+                        (document.getElementById('humorHipotimico').checked ? 'Hipotímico' : '') + '\n';
+            resultado += 'Vontade: ' + (document.getElementById('vontadeVolicaoPreservada').checked ? 'Volição preservada' : '') +
+                        (document.getElementById('vontadeImpulsividade').checked ? 'Impulsividade' : '') +
+                        (document.getElementById('vontadeCompulsao').checked ? 'Compulsão' : '') +
+                        (document.getElementById('vontadeVolicaoDiminuida').checked ? 'Volição diminuída' : '') +
+                        (document.getElementById('vontadeVolicaoAbsoluta').checked ? 'Volição abolida' : '') + '\n';
+            resultado += 'Psicomotricidade: ' + (document.getElementById('psicomotricidadeInalterado').checked ? 'Inalterado' : '') +
+                        (document.getElementById('psicomotricidadeEsturpor').checked ? 'Esturpor' : '') +
+                        (document.getElementById('psicomotricidadeAgitacao').checked ? 'Agitação psicomotora' : '') +
+                        (document.getElementById('psicomotricidadeLentificacao').checked ? 'Lentificação psicomotora' : '') + '\n';
+            resultado += 'Pensamento: ' + (document.getElementById('pensamentoOrganizado').checked ? 'Organizado' : '') +
+                        (document.getElementById('pensamentoDesorganizado').checked ? 'Desorganizado' : '') +
+                        (document.getElementById('pensamentoInalterado').checked ? 'Inalterado' : '') +
+                        (document.getElementById('pensamentoAcelerado').checked ? 'Acelerado' : '') +
+                        (document.getElementById('pensamentoLentificado').checked ? 'Lentificado' : '') +
+                        (document.getElementById('pensamentoNormal').checked ? 'Normal' : '') +
+                        (document.getElementById('pensamentoDelirante').checked ? 'Delirante' : '') +
+                        (document.getElementById('pensamentoIdeacaoSuicida').checked ? 'Ideação Suicida' : '') +
+                        (document.getElementById('pensamentoPersecutoriedade').checked ? 'Persecutoriedade' : '') + '\n';
+            resultado += 'Tipo de delírio ou persecutoriedade: ' + document.getElementById('tipoDelirio').value + '\n';
+            resultado += 'Senso Percepção: ' + (document.getElementById('sensoPercepcaoSemAlteracoes').checked ? 'Sem alterações' : '') +
+                        (document.getElementById('sensoPercepcaoIlusao').checked ? 'Ilusão' : '') +
+                        (document.getElementById('sensoPercepcaoDespersonalizacao').checked ? 'Despersonalização' : '') + '\n';
+            resultado += 'Alucinações/Tipo: ' + document.getElementById('alucinacoes').value + '\n';
+            resultado += 'Outras impressões do caso: ' + document.getElementById('impressaoCaso').value + '\n';
+
+            document.getElementById('resultado').textContent = resultado;
+        }
     </script>
-
 </body>
 </html>
