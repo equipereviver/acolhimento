@@ -332,6 +332,15 @@
     <script>
         function gerarResultado() {
             let resultado = 'ACOLHIMENTO\n\n';
+		#textoGerado {
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+#textoGerado * {
+    font-family: Arial, sans-serif;
+    text-align: justify;
             
             // Coletando os dados do formulário e gerando o resultado
             resultado += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
