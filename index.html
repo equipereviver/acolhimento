@@ -188,8 +188,29 @@
     <h2>Exame Psíquico</h2>
     <div class="section">
         <label>Aparência: <input type="text" id="aparencia"></label>
-        <!-- As demais partes seguem o mesmo padrão de estilização -->
-        <!-- (Por brevidade, posso te enviar tudo completíssimo se desejar) -->
+    resultado += 'Consciência: ' + obterSelecionados('consciencia') + '\n';
+    resultado += 'Atenção: ' + obterSelecionados('atencao') + '\n';
+    resultado += 'Orientação Alopsiquicamente: ' + (document.getElementById('orientacaoAlopsiquicaSim').checked ? 'Sim' : 'Não') + '\n';
+    resultado += 'Orientação Autopsiquicamente: ' + (document.getElementById('orientacaoAlopsiquicaNao').checked ? 'Sim' : 'Não') + '\n';
+    resultado += 'Memória: ' + (document.getElementById('memoriaPreservada').checked ? 'Preservada' : 'Alterada') + '\n';
+    resultado += 'Tipo de alteração na memória: ' + document.getElementById('memoriaAlteradaTipo').value + '\n';
+    resultado += 'Linguagem: ' + obterSelecionados('linguagem') + '\n';
+    resultado += 'Afetividade: ' + obterSelecionados('afetividade') + '\n';
+    resultado += 'Humor: ' + obterSelecionados('humor') + '\n';
+    resultado += 'Vontade: ' + obterSelecionados('vontade') + '\n';
+    resultado += 'Psicomotricidade: ' + obterSelecionados('psicomotricidade') + '\n';
+    resultado += 'Pensamento: ' + obterSelecionados('pensamento') + '\n';
+    resultado += 'Tipo de delírio: ' + document.getElementById('tipoDelirio').value + '\n';
+    resultado += 'Senso Percepção: ' + obterSelecionados('sensoPercepcao') + '\n';
+    resultado += 'Alucinações/Tipo: ' + document.getElementById('alucinacoes').value + '\n';
+    resultado += 'Outras impressões do caso: ' + document.getElementById('impressaoCaso').value + '\n';
+
+    document.querySelector('#resultado pre').textContent = resultado;
+}
+</script>
+
+</body>
+</html>
     </div>
 
     <button onclick="gerarResultado()">Gerar Resultado</button>
