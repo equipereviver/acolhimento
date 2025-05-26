@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Acolhimento CAPS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            background-color: #007BFF;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        h2 {
-            color: #333;
-            margin-top: 30px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        input[type=text],
-        input[type=number],
-        input[type=date],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        textarea {
-            resize: vertical;
-        }
-        .radio-group label {
-            font-weight: normal;
-            display: inline-block;
-            margin-right: 15px;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        pre {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            white-space: pre-wrap;
-        }
-        .section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formulário de Acolhimento CAPS</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+    h1 {
+        background-color: #007BFF;
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    h2 {
+        color: #333;
+        margin-top: 30px;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    input[type=text],
+    input[type=number],
+    input[type=date],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    textarea {
+        resize: vertical;
+    }
+    .radio-group label {
+        font-weight: normal;
+        display: inline-block;
+        margin-right: 15px;
+        margin-top: 5px;
+    }
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    pre {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        white-space: pre-wrap;
+        margin-top: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    .section {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+</style>
 </head>
 <body>
 
@@ -82,7 +87,7 @@
     <label>Nome Completo: <input type="text" id="nome"></label>
     <label>Data de Nascimento: <input type="date" id="nascimento"></label>
     <label>Idade: <input type="number" id="idade"></label>
-    <label>CPF: <input type="text" id="cpf"></label>
+    <label>CPF ou RG: <input type="text" id="cpf"></label>
     <label>Telefone: <input type="text" id="telefone"></label>
     <label>Endereço: <input type="text" id="endereco"></label>
 </div>
@@ -93,7 +98,7 @@
     <label>Encaminhado por: <input type="text" id="encaminhadoPor"></label>
     <label>Motivo de acolhimento: <input type="text" id="motivoAcolhimento"></label>
     <label>Equipe de Referência: <input type="text" id="equipeReferencia"></label>
-    <label>Profissionais no CAPS: <input type="text" id="profissionaisCaps"></label>
+    <label>Profissionais de referência no CAPS: <input type="text" id="profissionaisCaps"></label>
     <label>Rede de Apoio: <input type="text" id="redeApoio"></label>
     <label>Situação profissional: <input type="text" id="situacaoProfissional"></label>
 
@@ -112,6 +117,8 @@
     <label>Medicações em uso:<br><textarea id="medicacoesUso"></textarea></label>
     <label>Histórico de tratamentos psiquiátricos:<br><textarea id="historicoTratamentos"></textarea></label>
     <label>História de comportamento suicida:<br><textarea id="comportamentoSuicida"></textarea></label>
+    <label>História Gestacional:<br><textarea id="historiaGestacional"></textarea></label>
+    <label>História de Síndrome de Abstinência Alcoólica e data da última SAA (caso se aplique):<br><textarea id="sindromeAbstinencia"></textarea></label>
 </div>
 
 <!-- Substâncias Psicoativas -->
@@ -163,6 +170,34 @@
 <div class="section">
     <h2>Exame Psíquico</h2>
 
+    <label>Aparência:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="aparencia" value="Preservada"> Preservada</label>
+        <label><input type="radio" name="aparencia" value="Prejudicada"> Prejudicada</label>
+        <label><input type="radio" name="aparencia" value="Odor fétido"> Odor fétido</label>
+        <label><input type="radio" name="aparencia" value="Vestes condizentes"> Vestes condizentes</label>
+    </div>
+
+    <label>Consciência:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="consciencia" value="Consciente"> Consciente</label>
+        <label><input type="radio" name="consciencia" value="Obnubilado"> Obnubilado</label>
+        <label><input type="radio" name="consciencia" value="Torporoso"> Torporoso</label>
+        <label><input type="radio" name="consciencia" value="Comatoso"> Comatoso</label>
+    </div>
+
+    <label>Orientação Autopsiquicamente:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="orientacaoAutopsiquica" value="Sim"> Sim</label>
+        <label><input type="radio" name="orientacaoAutopsiquica" value="Não"> Não</label>
+    </div>
+
+    <label>Orientação Alopsiquicamente:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="orientacaoAlopsiquica" value="Sim"> Sim</label>
+        <label><input type="radio" name="orientacaoAlopsiquica" value="Não"> Não</label>
+    </div>
+
     <label>Atenção:</label>
     <div class="radio-group">
         <label><input type="radio" name="atencao" value="Normovigil"> Normovigil</label>
@@ -182,35 +217,134 @@
         <label><input type="radio" name="linguagem" value="Normal"> Normal</label>
         <label><input type="radio" name="linguagem" value="Prolixo"> Prolixo</label>
         <label><input type="radio" name="linguagem" value="Lacônico"> Lacônico</label>
-        <label><input type="radio" name="linguagem" value="Logorreico"> Logorreico</label>
+        <label><input type="radio" name="linguagem" value="Disfêmico"> Disfêmico</label>
         <label><input type="radio" name="linguagem" value="Mutismo"> Mutismo</label>
-    </div>
-
-    <label>Afetividade:</label>
-    <div class="radio-group">
-        <label><input type="radio" name="afetividade" value="Associado"> Associado</label>
-        <label><input type="radio" name="afetividade" value="Dissociado"> Dissociado</label>
-        <label><input type="radio" name="afetividade" value="Embotado"> Embotado</label>
+        <label><input type="radio" name="linguagem" value="Disartria"> Disartria</label>
+        <label><input type="radio" name="linguagem" value="Ecolalia"> Ecolalia</label>
     </div>
 
     <label>Humor:</label>
     <div class="radio-group">
         <label><input type="radio" name="humor" value="Eutímico"> Eutímico</label>
-        <label><input type="radio" name="humor" value="Hipertímico"> Hipertímico</label>
-        <label><input type="radio" name="humor" value="Hipotímico"> Hipotímico</label>
+        <label><input type="radio" name="humor" value="Disfórico"> Disfórico</label>
+        <label><input type="radio" name="humor" value="Ansioso"> Ansioso</label>
+        <label><input type="radio" name="humor" value="Eufórico"> Eufórico</label>
+        <label><input type="radio" name="humor" value="Apático"> Apático</label>
+        <label><input type="radio" name="humor" value="Irritável"> Irritável</label>
     </div>
 
-    <label>Vontade:</label>
+    <label>Psicomotricidade:</label>
     <div class="radio-group">
-        <label><input type="radio" name="vontade" value="Volição preservada"> Volição preservada</label>
-        <label><input type="radio" name="vontade" value="Impulsividade"> Impulsividade</label>
-        <label><input type="radio" name="vontade" value="Compulsão"> Compulsão</label>
-        <label><input type="radio" name="vontade" value="Volição diminuída"> Volição diminuída</label>
-        <label><input type="radio" name="vontade" value="Abolida"> Abolida</label>
+        <label><input type="radio" name="psicomotricidade" value="Inalterado"> Inalterado</label>
+        <label><input type="radio" name="psicomotricidade" value="Estupor"> Estupor</label>
+        <label><input type="radio" name="psicomotricidade" value="Agitação psicomotora"> Agitação psicomotora</label>
+        <label><input type="radio" name="psicomotricidade" value="Lentificação psicomotora"> Lentificação psicomotora</label>
     </div>
+
+    <label>Pensamento:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="pensamento" value="Organizado"> Organizado</label>
+        <label><input type="radio" name="pensamento" value="Desorganizado"> Desorganizado</label>
+        <label><input type="radio" name="pensamento" value="Inalterado"> Inalterado</label>
+        <label><input type="radio" name="pensamento" value="Acelerado"> Acelerado</label>
+        <label><input type="radio" name="pensamento" value="Lentificado"> Lentificado</label>
+        <label><input type="radio" name="pensamento" value="Normal"> Normal</label>
+        <label><input type="radio" name="pensamento" value="Delirante"> Delirante</label>
+        <label><input type="radio" name="pensamento" value="Ideação suicida"> Ideação suicida</label>
+        <label><input type="radio" name="pensamento" value="Persecutoriedade"> Persecutoriedade</label>
+    </div>
+
+    <label>Tipo de delírio ou persecutoriedade (descrever por extenso):</label>
+    <textarea id="tipoDelirio" rows="3"></textarea>
+
+    <label>Alucinações:</label>
+    <div class="radio-group">
+        <label><input type="radio" name="alucinacoes" value="Sim"> Sim</label>
+        <label><input type="radio" name="alucinacoes" value="Não"> Não</label>
+    </div>
+
+    <label>Se sim, descrever:</label>
+    <textarea id="descricaoAlucinacoes" rows="3"></textarea>
 </div>
 
-<button onclick="alert('Formulário preenchido!')">Finalizar Atendimento</button>
+<button onclick="mostrarResultado()">Gerar Resultado</button>
+
+<pre id="resultado"></pre>
+
+<script>
+function getRadioValue(name) {
+    const radios = document.getElementsByName(name);
+    for (const r of radios) {
+        if (r.checked) return r.value;
+    }
+    return '';
+}
+
+function mostrarResultado() {
+    let resultado = '';
+
+    // Dados do Paciente
+    resultado += '--- Dados do Paciente ---\n';
+    resultado += 'Nome Completo: ' + document.getElementById('nome').value + '\n';
+    resultado += 'Data de Nascimento: ' + document.getElementById('nascimento').value + '\n';
+    resultado += 'Idade: ' + document.getElementById('idade').value + '\n';
+    resultado += 'CPF ou RG: ' + document.getElementById('cpf').value + '\n';
+    resultado += 'Telefone: ' + document.getElementById('telefone').value + '\n';
+    resultado += 'Endereço: ' + document.getElementById('endereco').value + '\n\n';
+
+    // Dados Gerais
+    resultado += '--- Dados Gerais ---\n';
+    resultado += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
+    resultado += 'Motivo de acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
+    resultado += 'Equipe de Referência: ' + document.getElementById('equipeReferencia').value + '\n';
+    resultado += 'Profissionais de referência no CAPS: ' + document.getElementById('profissionaisCaps').value + '\n';
+    resultado += 'Rede de Apoio: ' + document.getElementById('redeApoio').value + '\n';
+    resultado += 'Situação profissional: ' + document.getElementById('situacaoProfissional').value + '\n';
+    resultado += 'Beneficiário: ' + getRadioValue('beneficiario') + '\n';
+    resultado += 'Histórico de vida: ' + document.getElementById('historicoVida').value + '\n';
+    resultado += 'Motivação para o tratamento: ' + document.getElementById('motivacaoTratamento').value + '\n';
+    resultado += 'Alergias: ' + document.getElementById('alergias').value + '\n';
+    resultado += 'Comorbidades clínicas: ' + document.getElementById('comorbidadesClinicas').value + '\n';
+    resultado += 'Comorbidades psiquiátricas: ' + document.getElementById('comorbidadesPsiquiatricas').value + '\n';
+    resultado += 'Medicações em uso: ' + document.getElementById('medicacoesUso').value + '\n';
+    resultado += 'Histórico de tratamentos psiquiátricos: ' + document.getElementById('historicoTratamentos').value + '\n';
+    resultado += 'História de comportamento suicida: ' + document.getElementById('comportamentoSuicida').value + '\n';
+    resultado += 'História Gestacional: ' + document.getElementById('historiaGestacional').value + '\n';
+    resultado += 'História de Síndrome de Abstinência Alcoólica e data da última SAA: ' + document.getElementById('sindromeAbstinencia').value + '\n\n';
+
+    // Substâncias Psicoativas
+    resultado += '--- Substâncias Psicoativas ---\n';
+
+    for (let i=1; i<=3; i++) {
+        resultado += 'Substância ' + i + ':\n';
+        resultado += 'Nome: ' + document.getElementById('substanciaPsico' + i).value + '\n';
+        resultado += 'Situação: ' + getRadioValue('situacao' + i) + '\n';
+        resultado += 'Idade do primeiro uso: ' + document.getElementById('idadePrimeiroUso' + i).value + '\n';
+        resultado += 'Frequência: ' + document.getElementById('frequencia' + i).value + '\n';
+        resultado += 'Último uso: ' + document.getElementById('ultimoUso' + i).value + '\n\n';
+    }
+    resultado += 'Fissura: ' + getRadioValue('fissura') + '\n\n';
+
+    // Exame Psíquico
+    resultado += '--- Exame Psíquico ---\n';
+    resultado += 'Aparência: ' + getRadioValue('aparencia') + '\n';
+    resultado += 'Consciência: ' + getRadioValue('consciencia') + '\n';
+    resultado += 'Orientação Autopsiquicamente: ' + getRadioValue('orientacaoAutopsiquica') + '\n';
+    resultado += 'Orientação Alopsiquicamente: ' + getRadioValue('orientacaoAlopsiquica') + '\n';
+    resultado += 'Atenção: ' + getRadioValue('atencao') + '\n';
+    resultado += 'Memória: ' + getRadioValue('memoria') + '\n';
+    resultado += 'Tipo de alteração na memória: ' + document.getElementById('memoriaAlteradaTipo').value + '\n';
+    resultado += 'Linguagem: ' + getRadioValue('linguagem') + '\n';
+    resultado += 'Humor: ' + getRadioValue('humor') + '\n';
+    resultado += 'Psicomotricidade: ' + getRadioValue('psicomotricidade') + '\n';
+    resultado += 'Pensamento: ' + getRadioValue('pensamento') + '\n';
+    resultado += 'Tipo de delírio ou persecutoriedade: ' + document.getElementById('tipoDelirio').value + '\n';
+    resultado += 'Alucinações: ' + getRadioValue('alucinacoes') + '\n';
+    resultado += 'Descrição das alucinações: ' + document.getElementById('descricaoAlucinacoes').value + '\n';
+
+    document.getElementById('resultado').textContent = resultado;
+}
+</script>
 
 </body>
 </html>
