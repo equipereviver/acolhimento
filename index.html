@@ -98,7 +98,104 @@
 <div class="container">
     <h1>Formulário de Acolhimento CAPS</h1>
 
-    <!-- ... (mantém o conteúdo do formulário exatamente como está) ... -->
+    <!-- Dados Gerais -->
+    <h2>Dados Gerais</h2>
+    <div class="section">
+        <label>Encaminhado por: <input type="text" id="encaminhadoPor"></label>
+        <label>Motivo de acolhimento: <input type="text" id="motivoAcolhimento"></label>
+        <label>Equipe de Referência: <input type="text" id="equipeReferencia"></label>
+        <label>Profissionais no CAPS: <input type="text" id="profissionaisCaps"></label>
+        <label>Rede de Apoio: <input type="text" id="redeApoio"></label>
+        <label>Situação profissional: <input type="text" id="situacaoProfissional"></label>
+
+        <div class="radio-group">
+            <label>Beneficiário:
+                <input type="radio" id="beneficiarioSim" name="beneficiario" value="Sim"> Sim
+                <input type="radio" id="beneficiarioNao" name="beneficiario" value="Não"> Não
+            </label>
+        </div>
+
+        <label>Histórico de vida:<br><textarea id="historicoVida"></textarea></label>
+        <label>Motivação para o tratamento:<br><textarea id="motivacaoTratamento"></textarea></label>
+        <label>Alergias:<br><textarea id="alergias"></textarea></label>
+        <label>Comorbidades clínicas:<br><textarea id="comorbidadesClinicas"></textarea></label>
+        <label>Comorbidades psiquiátricas:<br><textarea id="comorbidadesPsiquiatricas"></textarea></label>
+        <label>Medicações em uso:<br><textarea id="medicacoesUso"></textarea></label>
+        <label>Histórico de tratamentos psiquiátricos:<br><textarea id="historicoTratamentos"></textarea></label>
+        <label>História de comportamento suicida:<br><textarea id="comportamentoSuicida"></textarea></label>
+    </div>
+
+    <!-- Substâncias Psicoativas -->
+    <h2>Substâncias Psicoativas</h2>
+    <div class="section">
+        <!-- Substância 1 -->
+        <div class="substance">
+            <h3>Substância 1</h3>
+            <label>Nome: <input type="text" id="substanciaPsico1"></label>
+            <div class="radio-group">
+                <label><input type="radio" name="situacao1" value="Em uso"> Em uso</label>
+                <label><input type="radio" name="situacao1" value="Cessado"> Cessado</label>
+            </div>
+            <label>Idade do primeiro uso: <input type="number" id="idadePrimeiroUso1"></label>
+            <label>Frequência: <input type="text" id="frequencia1"></label>
+            <label>Último uso: <input type="text" id="ultimoUso1"></label>
+        </div>
+
+        <!-- Substância 2 -->
+        <div class="substance">
+            <h3>Substância 2</h3>
+            <label>Nome: <input type="text" id="substanciaPsico2"></label>
+            <div class="radio-group">
+                <label><input type="radio" name="situacao2" value="Em uso"> Em uso</label>
+                <label><input type="radio" name="situacao2" value="Cessado"> Cessado</label>
+            </div>
+            <label>Idade do primeiro uso: <input type="number" id="idadePrimeiroUso2"></label>
+            <label>Frequência: <input type="text" id="frequencia2"></label>
+            <label>Último uso: <input type="text" id="ultimoUso2"></label>
+        </div>
+
+        <!-- Substância 3 -->
+        <div class="substance">
+            <h3>Substância 3</h3>
+            <label>Nome: <input type="text" id="substanciaPsico3"></label>
+            <div class="radio-group">
+                <label><input type="radio" name="situacao3" value="Em uso"> Em uso</label>
+                <label><input type="radio" name="situacao3" value="Cessado"> Cessado</label>
+            </div>
+            <label>Idade do primeiro uso: <input type="number" id="idadePrimeiroUso3"></label>
+            <label>Frequência: <input type="text" id="frequencia3"></label>
+            <label>Último uso: <input type="text" id="ultimoUso3"></label>
+        </div>
+
+        <div class="radio-group">
+            <label>Fissura:
+                <input type="radio" name="fissura" value="Sim"> Sim
+                <input type="radio" name="fissura" value="Não"> Não
+            </label>
+        </div>
+    </div>
+
+    <!-- Exame Psíquico -->
+    <h2>Exame Psíquico</h2>
+    <div class="section">
+        <label>Aparência: <input type="text" id="aparencia"></label>
+        <label>Consciência: <input type="text" id="consciencia"></label>
+        <label>Atenção: <input type="text" id="atencao"></label>
+        <label>Orientação Alopsiquicamente: <input type="text" id="orientacaoAlopsiquica"></label>
+        <label>Orientação Autopsiquicamente: <input type="text" id="orientacaoAutopsiquica"></label>
+        <label>Memória: <input type="text" id="memoria"></label>
+        <label>Tipo de alteração na memória: <input type="text" id="memoriaAlteradaTipo"></label>
+        <label>Linguagem: <input type="text" id="linguagem"></label>
+        <label>Afetividade: <input type="text" id="afetividade"></label>
+        <label>Humor: <input type="text" id="humor"></label>
+        <label>Vontade: <input type="text" id="vontade"></label>
+        <label>Psicomotricidade: <input type="text" id="psicomotricidade"></label>
+        <label>Pensamento: <input type="text" id="pensamento"></label>
+        <label>Tipo de delírio: <input type="text" id="tipoDelirio"></label>
+        <label>Senso Percepção: <input type="text" id="sensoPercepcao"></label>
+        <label>Alucinações/Tipo: <input type="text" id="alucinacoes"></label>
+        <label>Outras impressões do caso:<br><textarea id="impressaoCaso"></textarea></label>
+    </div>
 
     <button onclick="gerarResultado()">Gerar Resultado</button>
 
@@ -109,7 +206,7 @@
 
 <script>
 function gerarResultado() {
-    let resultado = '*** FORMULÁRIO DE ACOLHIMENTO ***\n\n';
+    let resultado = '';
 
     resultado += 'Encaminhado por: ' + document.getElementById('encaminhadoPor').value + '\n';
     resultado += 'Motivo de acolhimento: ' + document.getElementById('motivoAcolhimento').value + '\n';
@@ -144,7 +241,7 @@ function gerarResultado() {
     const fissura = document.querySelector('input[name="fissura"]:checked');
     resultado += 'Fissura: ' + (fissura ? fissura.value : 'Não informado') + '\n\n';
 
-    resultado += '--- EXAME PSÍQUICO ---\n';
+    resultado += 'EXAME PSÍQUICO\n';
     resultado += 'Aparência: ' + document.getElementById('aparencia').value + '\n';
     resultado += 'Consciência: ' + document.getElementById('consciencia').value + '\n';
     resultado += 'Atenção: ' + document.getElementById('atencao').value + '\n';
