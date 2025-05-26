@@ -1,3 +1,6 @@
+Perfeito. Aqui está seu código HTML atualizado, já com os campos completos do Exame Psíquico integrados ao formulário original. Também inclui o JavaScript atualizado para gerar o resultado completo.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,24 +13,20 @@
             margin: 0;
             padding: 20px;
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
         h2 {
             color: #444;
             border-bottom: 2px solid #ccc;
             padding-bottom: 5px;
             margin-top: 30px;
         }
-
         h3 {
             color: #555;
             margin-bottom: 5px;
         }
-
         .container {
             max-width: 1000px;
             margin: auto;
@@ -36,13 +35,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
         label {
             display: block;
             margin-bottom: 8px;
             color: #333;
         }
-
         input[type="text"],
         input[type="number"],
         textarea {
@@ -53,21 +50,17 @@
             border-radius: 6px;
             box-sizing: border-box;
         }
-
         textarea {
             height: 60px;
             resize: vertical;
         }
-
         input[type="checkbox"],
         input[type="radio"] {
             margin-right: 5px;
         }
-
         .checkbox-group, .radio-group {
             margin-bottom: 15px;
         }
-
         .section {
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -75,7 +68,6 @@
             margin-bottom: 20px;
             background-color: #fafafa;
         }
-
         button {
             background-color: #007acc;
             color: white;
@@ -88,11 +80,9 @@
             display: block;
             margin: 20px auto;
         }
-
         button:hover {
             background-color: #005fa3;
         }
-
         #resultado {
             background-color: #fff;
             padding: 15px;
@@ -101,7 +91,6 @@
             margin-top: 30px;
             white-space: pre-wrap;
         }
-
         .substance {
             margin-bottom: 10px;
         }
@@ -189,11 +178,26 @@
         </div>
     </div>
 
-    <!-- Exame Psíquico (exemplo de campo) -->
+    <!-- Exame Psíquico -->
     <h2>Exame Psíquico</h2>
     <div class="section">
         <label>Aparência: <input type="text" id="aparencia"></label>
-        <label>Impressões do caso:<br><textarea id="impressaoCaso"></textarea></label>
+        <label>Consciência: <input type="text" id="consciencia"></label>
+        <label>Atenção: <input type="text" id="atencao"></label>
+        <label>Orientação Alopsiquicamente: <input type="text" id="orientacaoAlopsiquica"></label>
+        <label>Orientação Autopsiquicamente: <input type="text" id="orientacaoAutopsiquica"></label>
+        <label>Memória: <input type="text" id="memoria"></label>
+        <label>Tipo de alteração na memória: <input type="text" id="memoriaAlteradaTipo"></label>
+        <label>Linguagem: <input type="text" id="linguagem"></label>
+        <label>Afetividade: <input type="text" id="afetividade"></label>
+        <label>Humor: <input type="text" id="humor"></label>
+        <label>Vontade: <input type="text" id="vontade"></label>
+        <label>Psicomotricidade: <input type="text" id="psicomotricidade"></label>
+        <label>Pensamento: <input type="text" id="pensamento"></label>
+        <label>Tipo de delírio: <input type="text" id="tipoDelirio"></label>
+        <label>Senso Percepção: <input type="text" id="sensoPercepcao"></label>
+        <label>Alucinações/Tipo: <input type="text" id="alucinacoes"></label>
+        <label>Outras impressões do caso:<br><textarea id="impressaoCaso"></textarea></label>
     </div>
 
     <button onclick="gerarResultado()">Gerar Resultado</button>
@@ -240,8 +244,24 @@ function gerarResultado() {
     const fissura = document.querySelector('input[name="fissura"]:checked');
     resultado += 'Fissura: ' + (fissura ? fissura.value : 'Não informado') + '\n\n';
 
+    resultado += '--- EXAME PSÍQUICO ---\n';
     resultado += 'Aparência: ' + document.getElementById('aparencia').value + '\n';
-    resultado += 'Impressões do caso: ' + document.getElementById('impressaoCaso').value + '\n';
+    resultado += 'Consciência: ' + document.getElementById('consciencia').value + '\n';
+    resultado += 'Atenção: ' + document.getElementById('atencao').value + '\n';
+    resultado += 'Orientação Alopsiquicamente: ' + document.getElementById('orientacaoAlopsiquica').value + '\n';
+    resultado += 'Orientação Autopsiquicamente: ' + document.getElementById('orientacaoAutopsiquica').value + '\n';
+    resultado += 'Memória: ' + document.getElementById('memoria').value + '\n';
+    resultado += 'Tipo de alteração na memória: ' + document.getElementById('memoriaAlteradaTipo').value + '\n';
+    resultado += 'Linguagem: ' + document.getElementById('linguagem').value + '\n';
+    resultado += 'Afetividade: ' + document.getElementById('afetividade').value + '\n';
+    resultado += 'Humor: ' + document.getElementById('humor').value + '\n';
+    resultado += 'Vontade: ' + document.getElementById('vontade').value + '\n';
+    resultado += 'Psicomotricidade: ' + document.getElementById('psicomotricidade').value + '\n';
+    resultado += 'Pensamento: ' + document.getElementById('pensamento').value + '\n';
+    resultado += 'Tipo de delírio: ' + document.getElementById('tipoDelirio').value + '\n';
+    resultado += 'Senso Percepção: ' + document.getElementById('sensoPercepcao').value + '\n';
+    resultado += 'Alucinações/Tipo: ' + document.getElementById('alucinacoes').value + '\n';
+    resultado += 'Outras impressões do caso: ' + document.getElementById('impressaoCaso').value + '\n';
 
     document.querySelector('#resultado pre').textContent = resultado;
 }
